@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
+import { connect } from 'react-redux'
 import Input from './Input';
 
-export default class TodoForm extends React.Component {
+class TodoForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -53,3 +54,5 @@ const styles = StyleSheet.create({
     flex: 2
   }
 });
+
+export default connect()(TodoForm);
