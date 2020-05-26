@@ -25,8 +25,7 @@ export default class TodoApp extends React.Component {
                     <TodoForm />
                     <TodoList />
                 </View>
-            </Provider>
-            
+            </Provider>    
         );
     }
 }
