@@ -11,7 +11,7 @@ import { composeWithDevTools } from 'remote-redux-devtools';
 
 const composeEnhancers = composeWithDevTools({
     realtime: true,
-    hostname: '192.168.15.8',
+    hostname: '192.168.15.6',
     port: 8000 });
 
 

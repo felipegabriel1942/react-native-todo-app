@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
 import { connect } from 'react-redux'
 import Input from './Input';
-import { addTodo } from '../actions';
+import { addTodo, setTodoText } from '../actions';
 
 class TodoForm extends React.Component {
 
@@ -15,9 +15,7 @@ class TodoForm extends React.Component {
     }
 
     onChangeText(text) {
-        this.setState({
-            text
-        });
+        this.props.dispatchSetTodoText(text);
     }
 
     onPress() {
@@ -57,4 +55,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(null, {dispatchAddTodo: addTodo})(TodoForm);
+export default connect(null, {
+    dispatchAddTodo: addTodo,
+    dispatchSetTodoText: setTodoText
+})(TodoForm);

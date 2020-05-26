@@ -1,10 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const TodoListItem = ({ todo }) => {
-   return <TouchableOpacity onPress={() => {}}>
+const TodoListItem = ({ todo, onPressTodo }) => {
+    return <TouchableOpacity onPress={onPressTodo}>
         <View style={styles.line}>
-            <Text style={styles.lineText}>
+            <Text style={[
+                styles.lineText,
+                todo.done ? styles.lineThourgh : null
+            ]}>
                 { todo.text }
             </Text>
         </View>
@@ -29,6 +32,9 @@ const styles = StyleSheet.create({
         flex: 1,
         marginLeft: 15,
         borderRadius: 50
+    },
+    lineThourgh: {
+        textDecorationLine: 'line-through'
     }
 });
 
